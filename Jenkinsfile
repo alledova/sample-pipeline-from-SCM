@@ -3,8 +3,8 @@ pipeline {
 
     stages {
         stage('Build') {
-            steps {
-                miversion=env.BRANCH_NAME
+            def miversion=env.BRANCH_NAME
+            steps {                
                 echo "Building...$miversion"
             }
         }
