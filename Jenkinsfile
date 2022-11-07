@@ -1,9 +1,10 @@
 pipeline {
+    
     agent any
-
+    def miversion=env.BRANCH_NAME
     stages {
         stage('Build') {
-            def miversion=env.BRANCH_NAME
+            
             steps {                
                 echo "Building...$miversion"
             }
