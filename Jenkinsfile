@@ -1,4 +1,3 @@
-def miversion=env.BRANCH_NAME
 pipeline {
     
     agent any
@@ -7,7 +6,7 @@ pipeline {
         stage('Build') {
             
             steps {                
-                echo "Building...$miversion"
+                echo "Building...$BRANCH_NAME"
             }
         }
         stage('Test') {
