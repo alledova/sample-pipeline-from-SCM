@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building...'
+                miversion=env.BRANCH_NAME
+                echo "Building...$miversion"
             }
         }
         stage('Test') {
