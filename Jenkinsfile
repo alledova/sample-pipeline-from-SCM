@@ -1,6 +1,9 @@
 pipeline {    
     
     agent any
+     parameters {
+        string(msg: '¡Hola Mundo!')
+    }
     
     stages {
         stage('Build') {
@@ -9,7 +12,7 @@ pipeline {
                 echo "Building...Hola, adios y hasta luego"
                 
                 cs = load 'lib/cowsay.groovy'
-                cs.main(msg)
+                cs.main(${params.msg})
             }
         }
         stage('Test') {
