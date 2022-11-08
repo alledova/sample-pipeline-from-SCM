@@ -11,6 +11,7 @@ pipeline {
             steps {                
                 echo "Building...Hola, adios y hasta luego"                
                 cowsay = load 'lib/cowsay.groovy'
+                echo  "$cowsay"
                 cs = new cowsay()
                 cs.main(${params.msg})
             }
