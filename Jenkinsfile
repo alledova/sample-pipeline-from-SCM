@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
             
             steps {                
-                echo "Building...Hola y adios"
+                echo "Building...Hola, adios y hasta luego"
             }
         }
         stage('Test') {
