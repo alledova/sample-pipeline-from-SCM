@@ -1,6 +1,5 @@
-pipeline {
-
-    @lib/cowsay.groovy
+@lib/cowsay.groovy
+pipeline {    
     
     agent any
     
