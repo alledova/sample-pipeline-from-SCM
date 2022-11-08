@@ -1,26 +1,28 @@
-pipeline {    
-    
-    agent any
+pipeline {
+  agent any
+  stages {
+    stage('Build') {
+      steps {
+        script {
+          def cowsay = load 'lib/cowsay.groovy'
+          cowsay.example1()
+        }
 
-    stages {
-        stage('Build') {
-            steps { 
-                script{
-                def cowsay = load 'lib/cowsay.groovy'
-                cowsay.example1()
-                }
-              
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing...'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying.....'
-            }
-        }
+        build 'mijob'
+      }
     }
+
+    stage('Test') {
+      steps {
+        echo 'Testing...'
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        echo 'Deploying.....'
+      }
+    }
+
+  }
 }
