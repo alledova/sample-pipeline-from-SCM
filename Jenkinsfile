@@ -1,4 +1,3 @@
-@lib/cowsay.groovy
 pipeline {    
     
     agent any
