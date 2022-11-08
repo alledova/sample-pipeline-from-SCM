@@ -2,10 +2,6 @@ pipeline {
     
     agent any
 
-     parameters {
-        string(msg: '¡Hola Mundo!')
-    }
-    
     stages {
         stage('Build') {
             steps { 
