@@ -10,14 +10,9 @@ pipeline {
         stage('Build') {
             steps { 
                 script{
-                def cowsay = load 'lib/cowsay.class'
-                cs = new cowsay()
-                cs.main(${params.msg})                
-                }               
-                //echo  "$cowsay"
-                //echo "Building...Hola, adios y hasta luego"                
-                
-                
+                def cowsay = load 'lib/cowsay.groovy'
+                cowsay.example1()
+              
             }
         }
         stage('Test') {
