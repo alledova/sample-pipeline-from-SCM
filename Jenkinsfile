@@ -8,12 +8,16 @@ pipeline {
     
     stages {
         stage('Build') {
-            steps {                
-                echo "Building...Hola, adios y hasta luego"                
-                cowsay = load 'lib/cowsay.groovy'
+            steps { 
+                script{
+                def cowsay = load 'lib/cowsay.groovy'
+                cs = new cowsay()
+                cs.main(${params.msg})                
+                }               
                 echo  "$cowsay"
-                //cs = new cowsay()
-                //cs.main(${params.msg})
+                echo "Building...Hola, adios y hasta luego"                
+                
+                
             }
         }
         stage('Test') {
