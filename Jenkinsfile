@@ -5,11 +5,11 @@ pipeline {
     
     stages {
         stage('Build') {
-            def msg = "¡Hola Mundo!"
-            cs = new cowsay()
-            
+                       
             steps {                
                 echo "Building...Hola, adios y hasta luego"
+                def msg = "¡Hola Mundo!"
+                cs = load 'lib/cowsay.groovy'
                 cs.main(msg)
             }
         }
