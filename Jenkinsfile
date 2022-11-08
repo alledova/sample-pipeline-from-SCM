@@ -12,6 +12,7 @@ pipeline {
                 script{
                 def cowsay = load 'lib/cowsay.groovy'
                 cowsay.example1()
+                }
               
             }
         }
