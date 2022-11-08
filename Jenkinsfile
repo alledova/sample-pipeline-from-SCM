@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {                
                 echo "Building...Hola, adios y hasta luego"                
-                @lib/cowsay.groovy
+                cowsay = load 'lib/cowsay.groovy'
                 cs = new cowsay()
                 cs.main(${params.msg})
             }
